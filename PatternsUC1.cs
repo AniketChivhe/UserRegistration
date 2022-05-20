@@ -10,7 +10,7 @@ namespace UC1_ValidFirstName
     internal class PatternsUC1
     {
         // Applying Regex Rule
-        public static string RegexRules = "^[A-Za-z]{2,}$";
+        public static string RegexRules = "^[A-Za-z]{3,}$";
         
         public bool validateString(string sample)
         {
