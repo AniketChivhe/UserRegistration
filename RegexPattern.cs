@@ -92,7 +92,6 @@ namespace UC10_UnitTest
 
         public static string ValidatingPhoneNum(string phoneNum)
         {
-           // string[] phoneNumInput = { "91 7852234896", " 91 9865741548", "919865795312", "91@123", "A865" };
             string RegexRules = "^[0-9]+[ ]+[0-9]{10}$";
 
             bool result = Regex.IsMatch(phoneNum, RegexRules);
@@ -108,8 +107,7 @@ namespace UC10_UnitTest
             return default;
         }
         public static string ValidatingPassWord(string password)
-        {
-            //string[] passwordInput = { "Shalini@12", "sakAthi_32", "raksha123", "prathee" };
+        {         
             string RegexRules = @"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&:;<>,.?~_+-=(){}|]).{8,}$";
 
             bool result = Regex.IsMatch(password, RegexRules);
