@@ -1,30 +1,23 @@
-﻿
-    
-using System;
+﻿using System;
 
-namespace UC7_AtLeastOneDigit
+namespace UC12_CustomException
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            PatternsUC7 patterns = new PatternsUC7();
-            Console.WriteLine("Enter password minimum 8 characters with one upper case and one numeric number");
-            string password = Console.ReadLine();
-            if (patterns.validateString(password))
-            {
-                Console.WriteLine("Valid");
-            }
-            else
-                Console.WriteLine("Invalid");
-            Console.ReadKey();
+            Console.WriteLine("-----------------------------------------------------------------------------------------------");
+            Console.WriteLine("----------------------------User Registration Problem Using Regular Expression-----------------");
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            //uc-4 phone number validated
+            //Uc-5 validating password -Rule-1 added
+            //Uc-6 validating password -Rule-2 added
+            //uc-7 validating password rule -3 atlest one digit added
+            //uc-8 rule 4 added-one speacial character
+            //uc-9 all clear Email Samples Are added
+            RegexPattern user = new RegexPattern();
+            user.ValidatingAllFields();
+
         }
     }
 }
-
-
-
-
-
-
-
