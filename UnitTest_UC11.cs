@@ -11,7 +11,7 @@ namespace TestProject1
     [TestClass]
     public class UnitTest_UC11
     {
-        //Validation for Email
+        //passing Sample Email ID and Checking
         [TestMethod]
         [DataRow("abc@gmail.com", "abc@gmail.com")]
         [DataRow("abc-100@yahoo.com", "abc-100@yahoo.com")]
@@ -21,32 +21,20 @@ namespace TestProject1
         [DataRow("abc-100@abc.net", "abc-100@abc.net")]
         [DataRow("abc.100@abc.com.au", "abc.100@abc.com.au")]
         [DataRow("abc@1.com", "abc@1.com")]
-        [DataRow("abc@gmail.com.com", "abc@gmail.com.com")]
-        [DataRow("abc+100@gmail.com", "abc+100@gmail.com")]
-        [DataRow("abc", null)]
-        [DataRow("abc@.com.my", null)]
-        [DataRow("abc123@.com", null)]
-        [DataRow("abc123@.com.com", null)]
-        [DataRow("abc()*@gmail.com", null)]
-        [DataRow(".abc@abc.com", null)]
-        [DataRow("abc@%*.com", null)]
-        [DataRow("abc..2002@gmail.com", null)]
-        [DataRow("abc.@gmail.com", null)]
-        [DataRow("abc@abc@gmail.com", null)]
-        [DataRow("abc@gmail.com.1a", null)]
-        [DataRow("abc@gmail.com.aa.au", null)]
 
         public void ValidateUserEmail(string a, string expected)
         {
-            try
-            {
-                var actual = RegexPattern.ValidatingEmailId(a);
-                Assert.AreEqual(expected, actual);
-            }
-            catch (CustomException actual)
-            {
-                Assert.AreEqual(expected, actual.message);
-            }
+            var actual = RegexPattern.ValidatingEmailId(a);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Method_Parameteized_Constructor()
+        {
+            object expected = new RegexPattern("RegularExpression");
+            UserRegistrationFactory factory = new UserRegistrationFactory();
+            object actual = factory.CreateParameterizedConstructor("UC11_UsingReflection.RegexPattern", "RegexPattern", "RegularExpression");
+            actual.Equals(expected);
         }
     }
 }

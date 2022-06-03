@@ -54,7 +54,10 @@ namespace UC11_UsingReflection
             {
                 throw new CustomException(CustomException.ExceptionType.NO_SUCH_CLASS, "No class found");
             }
-
+        }
+        public object Test_Method_Parameteized_Constructor(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
         }
     }
 }
